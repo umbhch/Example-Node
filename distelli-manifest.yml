@@ -1,17 +1,16 @@
-samheutmaker1/Example-Node:
+mahesws/Example-Node:
   # Distelli Manifest example
   # this example assumes the build and deploy servers are:
-  # Ubuntu 14.04 
+  # RHEL
 
   PreRelease:
     - echo "---Beginning PreRelease---"
     - echo "--Installing build dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
+    - sudo yum -y install epel-release
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
+    - sudo yum -y install nodejs
     - echo "-Installing npm-"
-    - sudo apt-get -y install npm
+    - sudo yum -y install npm
     - echo "--Building--"
     - npm install
     - echo "--Testing--"
@@ -26,12 +25,10 @@ samheutmaker1/Example-Node:
   PreInstall:
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
+    - sudo yum -y install nodejs
     - echo "-Installing npm-"
-    - sudo apt-get -y install npm
+    - sudo yum -y install npm
 
   PostInstall:
     - echo "Begin PostInstall"
